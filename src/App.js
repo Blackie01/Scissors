@@ -9,6 +9,7 @@ export default function App() {
 
   return (
     <div className="App">
+      This is an app
       <InputShortener setInputValue={setInputValue} inputValue={inputValue} />
       <Results inputValue={inputValue} />
     </div>
