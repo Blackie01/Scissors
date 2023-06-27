@@ -1,0 +1,68 @@
+.overall-nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+.overall-nav img {
+  scale: 0.8;
+}
+
+.mid-nav-section {
+  display: flex;
+  gap: 2em;
+}
+
+.mid-nav-section p {
+  cursor: pointer;
+}
+
+#url-text-for-nav {
+  color: #0065fe;
+}
+
+#features {
+  height: max-content;
+  border: none;
+  width: 5rem;
+  font-size: inherit;
+}
+
+#features:focus {
+  outline: none;
+}
+
+.login-signup-section {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  gap: 2em;
+}
+
+#login-button {
+  color: #0065fe;
+}
+
+#signup-button {
+  background-color: #0065fe;
+  padding: 0.7em 1.2em;
+  width: 5rem;
+  border-radius: 15px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+    .overall-nav {
+        display: block;
+    }
+    
+    .mid-nav-section {
+        display: none;
+    }
+
+    .login-signup-section {
+        display: none;
+    }
+    
+}

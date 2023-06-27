@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-import InputShortener from "./components/InputShortener";
-import Results from "./components/Results";
-
-
+import React from "react";
+import Home from "./components/Home";
 
 export default function App() {
-  const [inputValue, setInputValue] = useState("");
-
   return (
     <div className="App">
-      This is an app
-      <InputShortener setInputValue={setInputValue} inputValue={inputValue} />
-      <Results inputValue={inputValue} />
+      <Home />
     </div>
   );
 }
