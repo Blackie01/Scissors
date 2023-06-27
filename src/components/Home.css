@@ -1,0 +1,21 @@
+.jumbo-area {
+  text-align: center;
+}
+
+.jumbo-area h1 {
+  font-size: 2.4rem;
+  line-height: 4.5rem;
+  margin-top: 5rem;
+}
+
+.jumbo-area p {
+  color: #141414;
+  font-size: 0.9rem;
+  font-weight: "400";
+  word-wrap: "break-word";
+}
+
+#shortening-span {
+  color: #0065fe;
+}
+

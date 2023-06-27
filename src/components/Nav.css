@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   font-size: 0.9rem;
+  font-weight: 500;
   align-items: center;
 }
 
@@ -27,6 +28,8 @@
   border: none;
   width: 5rem;
   font-size: inherit;
+  font-weight: 500;
+
 }
 
 #features:focus {
@@ -56,7 +59,7 @@
     .overall-nav {
         display: block;
     }
-    
+
     .mid-nav-section {
         display: none;
     }
