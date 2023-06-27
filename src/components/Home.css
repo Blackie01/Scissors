@@ -63,3 +63,62 @@ backdrop-filter: blur(106px);
 #line-arrow {
   margin: 0 1rem;
 }
+
+
+/* Input Shortener Styles */
+/* 
+.type-link-section {
+  display: flex;
+          margin-top: 3rem;
+          justify-content: center;
+}
+
+.type-link-input {
+  width: 30%;
+            height: 3rem;
+            border-radius: 25px;
+            border: 1px solid #0065fe;
+            padding: 0 2rem;
+}
+
+.type-link-button {
+  margin-left: 1.5rem;
+            padding: 0 2rem;
+            border-radius: 25px;
+            border: none;
+            background-color: #0065fe;
+            color: #fff;
+            cursor: pointer;
+            transition: scale 0.2s;
+}
+
+.type-link-button:hover {
+  scale: 1.01;
+} */
+
+
+@media (max-width: 768px) {
+
+  .jumbo-area h1 {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    width: 80%;
+    margin: 5rem auto auto auto;
+  }
+
+  .jumbo-area p {
+    width: 80%;
+    margin: 1rem auto;
+    line-height: 1.5em;
+
+  }
+
+  /* .type-link-section {
+    display: ;
+  }
+
+  .type-link-button {
+            
+  } */
+  
+}
