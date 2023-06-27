@@ -3,6 +3,9 @@ import InputShortener from "./InputShortener";
 import Results from "./Results";
 import Navbar from "./Nav";
 import "./Home.css";
+import Vector2 from "../assets/Vector 2.png";
+import Line7 from "../assets/Line 7.png";
+import Link2 from "../assets/link-2.png";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -67,14 +70,37 @@ function Home() {
         </h1>
 
         <p>
-        Personalize your shortened URLs to align with your brand identity. Utilize custom slugs, <br/>
-        branded links, and domain customization options to reinforce your brand presence and <br/> 
-        enhance user engagement.
+          Personalize your shortened URLs to align with your brand identity.
+          Utilize custom slugs, <br />
+          branded links, and domain customization options to reinforce your
+          brand presence and <br />
+          enhance user engagement.
         </p>
       </section>
       <section className="home-shortener-function">
         <InputShortener setInputValue={setInputValue} inputValue={inputValue} />
         <Results inputValue={inputValue} />
+      </section>
+
+      <section className="vector-image-section">
+        <span>
+          <img id="vector2" src={Vector2} />
+        </span>
+
+        <div className="image-container-1">
+          <span className="image-container-span">
+            <img className="image-item" src={Link2} />
+            <img className="image-item" src={Link2} />
+            <img className="image-item" src={Link2} />
+            <img id="line-arrow" src={Line7} />
+            <img className="image-item" src={Link2} />
+          </span>
+
+          <p>
+            Seamlessly transform your long URLs into concise <br />
+            and shareable links with just few clicks.
+          </p>
+        </div>
       </section>
     </section>
   );

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
+import Loader from '../assets/loader.gif'
 
 const Results = ({ inputValue }) => {
   const [shortenLink, setShortenLink] = useState("");
@@ -37,25 +38,53 @@ const Results = ({ inputValue }) => {
   }, [copied]);
 
   if (loading) {
-    return <p className="noData">Loading...</p>;
+    return <p 
+    style={{
+      textAlign: 'center',
+      height: '50px',
+      scale: '0.1'
+    }}
+    className="noData"><img src={Loader}/></p>;
   }
   if (error) {
-    return <p className="noData">Something wne t wrong :(</p>;
+    return <p className="noData">Something went wrong :(</p>;
+  }
+
+  function copyText () {
+    document.getElementById('copyTextFunction').innerHTML = 'Copied.'
   }
 
   return (
     <>
       {shortenLink && (
         <div className="result">
-          <p style={{ textDecoration: "underline", color: "blue" }}>
+          <p
+            style={{
+              // textDecoration: "underline",
+              // color: "blue",
+              textAlign: 'center'
+            }}
+          >
             {shortenLink}
           </p>
           <CopyToClipboard text={shortenLink} onCopy={() => setCopied(true)}>
             <button
-              style={{ cursor: "pointer" }}
+              style={{ 
+                cursor: "pointer", 
+                display: 'flex',
+                justifyContent: 'center',
+                border: '1px solid #0065fe',
+                backgroundColor: '#fff',
+                margin: 'auto',
+                padding: '0.6rem 1rem',
+                borderRadius: '10px'
+              
+              }}
               className={copied ? "copied" : ""}
+              id="copyTextFunction"
+              onClick={copyText}
             >
-              Copy to Clipboard
+              Copy
             </button>
           </CopyToClipboard>
         </div>

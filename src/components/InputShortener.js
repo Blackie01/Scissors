@@ -23,7 +23,7 @@ const InputShortener = ({ setInputValue }) => {
           height: '3rem',
           borderRadius: '25px',
           border: '1px solid #0065fe',
-          paddingLeft: '2rem'
+          padding: '0 2rem'
           
         }}
           type="text"
@@ -38,12 +38,14 @@ const InputShortener = ({ setInputValue }) => {
           borderRadius: '25px',
           border: 'none',
           backgroundColor: '#0065fe',
-          color: '#fff'
+          color: '#fff',
+          cursor: 'pointer',
+          hover: {scale:'1.2'}
         }}
         type= 'button' 
         onClick={handleClick}
         >
-          shorten
+          Shorten
         </button>
       </div>
     </div>
