@@ -1,3 +1,5 @@
+
+
 .jumbo-area {
   text-align: center;
 }
@@ -64,40 +66,34 @@ backdrop-filter: blur(106px);
   margin: 0 1rem;
 }
 
-
-/* Input Shortener Styles */
-/* 
 .type-link-section {
   display: flex;
-          margin-top: 3rem;
-          justify-content: center;
+  margin-top: 3rem;
 }
 
 .type-link-input {
   width: 30%;
-            height: 3rem;
-            border-radius: 25px;
-            border: 1px solid #0065fe;
-            padding: 0 2rem;
+  padding: 0 2rem;
 }
 
 .type-link-button {
   margin-left: 1.5rem;
-            padding: 0 2rem;
-            border-radius: 25px;
-            border: none;
-            background-color: #0065fe;
-            color: #fff;
-            cursor: pointer;
-            transition: scale 0.2s;
 }
 
-.type-link-button:hover {
-  scale: 1.01;
-} */
+.overlays {
+  position: absolute;
 
+}
 
 @media (max-width: 768px) {
+
+  .overall-home {
+    margin-bottom: 5rem;
+  }
+
+  .overlays {
+    display: none;
+  }
 
   .jumbo-area h1 {
     font-size: 1.4rem;
@@ -113,12 +109,29 @@ backdrop-filter: blur(106px);
 
   }
 
-  /* .type-link-section {
-    display: ;
+  .vector-image-section {
+    flex-direction: column;
+    margin: unset;
+    padding-top: 10rem;
+  }
+
+  .type-link-section {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: max-content;
+    margin: 2rem auto;
+  }
+
+  .type-link-input {
+    width: 15rem;
+    text-align: center;
   }
 
   .type-link-button {
-            
-  } */
+    width: 100%;
+    margin-left: unset;
+  }
+
+
   
 }

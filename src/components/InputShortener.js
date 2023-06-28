@@ -15,18 +15,19 @@ const InputShortener = ({ setInputValue }) => {
       <div
       className="type-link-section"
         style={{
-          display: "flex",
-          marginTop: "3rem",
+          
+          // marginTop: "3rem",
           justifyContent: "center",
         }}
       >
         <input
+        className="type-link-input"
           style={{
-            width: "30%",
+            // width: "30%",
             height: "3rem",
             borderRadius: "25px",
             border: "1px solid #0065fe",
-            padding: "0 2rem",
+            // padding: "0 2rem",
           }}
           type="text"
           placeholder="Paste a link to shorten it"
@@ -36,13 +37,14 @@ const InputShortener = ({ setInputValue }) => {
         <button
         className="type-link-button"
           style={{
-            marginLeft: "1.5rem",
+            // marginLeft: "1.5rem",
             padding: "0 2rem",
             borderRadius: "25px",
             border: "none",
             backgroundColor: "#0065fe",
             color: "#fff",
             cursor: "pointer",
+            height: '3rem',
             hover: { scale: "1.2" },
           }}
           type="button"

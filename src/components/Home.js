@@ -11,23 +11,25 @@ function Home() {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <section>
+    <section className="overhome-home">
       <div
+      className="overlays"
         style={{
           width: 1058,
           height: 404.9,
           left: 191,
           top: 0,
-          position: "absolute",
+          // position: "absolute",
         }}
       >
         <div
+      className="overlays"
           style={{
             width: 199.1,
             height: 215.08,
             left: 0,
             top: 0,
-            position: "absolute",
+            // position: "absolute",
             background: "#D60505",
             boxShadow: "700px 700px 700px ",
             borderRadius: 9999,
@@ -35,12 +37,13 @@ function Home() {
           }}
         />
         <div
+      className="overlays"
           style={{
             width: 199.1,
             height: 215.08,
             left: 270,
             top: 11.9,
-            position: "absolute",
+            // position: "absolute",
             background: "#067808",
             boxShadow: "700px 700px 700px ",
             borderRadius: 9999,
@@ -48,12 +51,13 @@ function Home() {
           }}
         />
         <div
+      className="overlays"
           style={{
             width: 271,
             height: 293,
             left: 787,
             top: 111.9,
-            position: "absolute",
+            // position: "absolute",
             background: "#EAC81F",
             boxShadow: "700px 700px 700px ",
             borderRadius: 9999,
