@@ -6,6 +6,7 @@ import "./Home.css";
 import Vector2 from "../assets/Vector 2.png";
 import Line7 from "../assets/Line 7.png";
 import Link2 from "../assets/link-2.png";
+import vector3 from '../assets/Vector 3.png';
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -70,9 +71,8 @@ function Home() {
       <section className="jumbo-area">
         <h1>
           Optimize Your Online Experience with Our <br />
-          Advanced <span id="shortening-span">URL Shortening</span> Solution
+          Advanced <div id="shortening-span">URL Shortening  <img className="colored-vector-img" src={vector3}/></div> Solution
         </h1>
-
         <p>
           Personalize your shortened URLs to align with your brand identity.
           Utilize custom slugs, <br />
