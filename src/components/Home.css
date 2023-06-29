@@ -90,6 +90,7 @@ backdrop-filter: blur(106px);
 
 .overlays {
   position: absolute;
+  z-index: -1;
 
 }
 

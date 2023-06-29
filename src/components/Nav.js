@@ -19,7 +19,7 @@ function Navbar() {
           </select>
         </p>
 
-        <p>Pricing</p>
+        <p style={{marginLeft: '1.5rem'}}>Pricing</p>
         <p>Analytics</p>
         <p>FAQs</p>
       </section>

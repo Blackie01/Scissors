@@ -13,6 +13,8 @@ function Home() {
 
   return (
     <section className="overhome-home">
+      <Navbar />
+
       <div
       className="overlays"
         style={{
@@ -66,7 +68,6 @@ function Home() {
           }}
         />
       </div>
-      <Navbar />
 
       <section className="jumbo-area">
         <h1>

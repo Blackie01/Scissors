@@ -4,6 +4,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   align-items: center;
+  z-index: 1;
 }
 
 .overall-nav img {
@@ -16,7 +17,13 @@
 }
 
 .mid-nav-section p {
+  transition: font-weight 0.1s ease;
+  width: 4rem;
   cursor: pointer;
+}
+
+.mid-nav-section p:hover {
+  font-weight: bold;
 }
 
 #url-text-for-nav {
@@ -29,7 +36,13 @@
   width: 5rem;
   font-size: inherit;
   font-weight: 500;
+  background: none;
+  transition: font-weight 0.1s ease;
+}
 
+#features:hover {
+  cursor: pointer;
+  font-weight: bold;
 }
 
 #features:focus {
