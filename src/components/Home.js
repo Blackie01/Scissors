@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import InputShortener from "./InputShortener";
-import Results from "./Results";
+import React from "react";
 import Navbar from "./Nav";
 import "./Home.css";
 import Vector2 from "../assets/Vector 2.png";
 import Line7 from "../assets/Line 7.png";
 import Link2 from "../assets/link-2.png";
 import vector3 from '../assets/Vector 3.png';
+import LinkShortener from "./LinkShortener";
 
 function Home() {
-  const [inputValue, setInputValue] = useState("");
 
   return (
     <section className="overhome-home">
@@ -83,8 +81,7 @@ function Home() {
         </p>
       </section>
       <section className="home-shortener-function">
-        <InputShortener setInputValue={setInputValue} inputValue={inputValue} />
-        <Results inputValue={inputValue} />
+       <LinkShortener/>
       </section>
 
       <section className="vector-image-section">

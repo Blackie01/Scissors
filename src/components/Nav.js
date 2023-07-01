@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import Logo from "../assets/Logo (1).png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -12,8 +13,9 @@ function Navbar() {
         <p>
           <select name="features" id="features">
             <option>Features</option>
+            <p>Go home</p>
             <option value="link-shortening">Link Shortening</option>
-            <option value="qr-codes">QR Codes</option>
+            <option onchange="location = this./qr;" value="qr-codes">QR Codes</option>
             <option value="custom-urls">Custom URLs</option>
             <option value="data-analytics">Data Analytics</option>
           </select>
