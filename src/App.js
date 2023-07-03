@@ -1,20 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import Home from "./components/Home";
 import { Route, Routes } from "react-router-dom";
 import QrCode from "./components/QrCode";
 import Signup from "./components/Signup";
 import Dashboard from "./components/dashboard";
+import Login from "./components/Login";
 
 export default function App() {
-
+ const [username, setUsername] = useState('')
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/qr" element={<QrCode/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route setUsername={setUsername} username={username} path="/signup" element={<Signup/>}/>
+        <Route username={username} path="/dashboard" element={<Dashboard/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </div>
   );
