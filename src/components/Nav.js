@@ -30,7 +30,9 @@ function Navbar() {
 
       <section className="login-signup-section">
         <p id="login-button">Login</p>
+        <Link to='/dashboard'>
         <p id="signup-button">Try for free</p>
+        </Link>
       </section>
     </section>
   );
