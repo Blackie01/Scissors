@@ -1,0 +1,80 @@
+.dashboard-container {
+    display: flex;
+}
+
+.wrapper-div {
+    margin-left: 1rem;
+}
+
+
+
+
+.dashboard-panel {
+    width: 12%;
+    background: rgb(203, 202, 202, 0.10);
+    backdrop-filter: blur(106px);
+    height: 100vh;
+    font-size: small;
+    text-align: left;
+}
+
+
+
+#dashboard-logo {
+    text-align: left;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+#user-image-name {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin: 2rem 0 1.2rem 0;
+}
+
+#profile-image {
+    height: 2rem;
+    width: 2rem;
+    background-color: #0065fe;
+    padding: 0.3rem;
+    border-radius: 50%;
+    scale: 0.8;
+}
+
+#dashboard-hr {
+    border-color: rgba(200, 181, 181, 0.1);
+}
+
+#dashboard-panel-options{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+#dashboard-panel-options p {
+    padding: 0.3rem 0 0.3rem 1rem;
+    cursor: pointer;
+}
+
+#dashboard-panel-options p:hover {
+    background-color: rgba(200, 181, 181, 0.1);
+}
+
+#dashboard-panel-options p.active {
+    color: #0065fe;
+    font-weight: bold;
+}
+
+.dashboard-main-display {
+    height: 100vh;
+    width: 100%;
+}
+
+.component-container {
+    margin: auto;
+    margin-top: 11.1%;
+    height: 30rem;
+}

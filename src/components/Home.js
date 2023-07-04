@@ -4,17 +4,16 @@ import "./Home.css";
 import Vector2 from "../assets/Vector 2.png";
 import Line7 from "../assets/Line 7.png";
 import Link2 from "../assets/link-2.png";
-import vector3 from '../assets/Vector 3.png';
+import vector3 from "../assets/Vector 3.png";
 import LinkShortener from "./LinkShortener";
 
 function Home() {
-
   return (
     <section className="overhome-home">
       <Navbar />
 
       <div
-      className="overlays"
+        className="overlays"
         style={{
           width: 1058,
           height: 404.9,
@@ -24,7 +23,7 @@ function Home() {
         }}
       >
         <div
-      className="overlays"
+          className="overlays"
           style={{
             width: 199.1,
             height: 215.08,
@@ -38,7 +37,7 @@ function Home() {
           }}
         />
         <div
-      className="overlays"
+          className="overlays"
           style={{
             width: 199.1,
             height: 215.08,
@@ -52,7 +51,7 @@ function Home() {
           }}
         />
         <div
-      className="overlays"
+          className="overlays"
           style={{
             width: 271,
             height: 293,
@@ -70,7 +69,11 @@ function Home() {
       <section className="jumbo-area">
         <h1>
           Optimize Your Online Experience with Our <br />
-          Advanced <div id="shortening-span">URL Shortening  <img className="colored-vector-img" src={vector3}/></div> Solution
+          Advanced{" "}
+          <div id="shortening-span">
+            URL Shortening <img className="colored-vector-img" src={vector3} />
+          </div>{" "}
+          Solution
         </h1>
         <p>
           Personalize your shortened URLs to align with your brand identity.
@@ -81,7 +84,7 @@ function Home() {
         </p>
       </section>
       <section className="home-shortener-function">
-       <LinkShortener/>
+        <LinkShortener />
       </section>
 
       <section className="vector-image-section">

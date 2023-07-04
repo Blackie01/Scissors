@@ -12,19 +12,22 @@ function QrCode() {
 
   //onClick function for the button
   const GenerateQR = () => {
-
     // to set the name for the qr code to be used in the download name
-    setQrName(nameInput)
+    setQrName(nameInput);
 
-    QRCode.toDataURL(url, {
+    QRCode.toDataURL(
+      url,
+      {
         scale: 10,
         margin: 1,
-        errorCorrectionLevel: 'H'
-    }, (err, url) => {
-      if (err) return console.error(err);
-      console.log(url);
-      setQrCode(url);
-    });
+        errorCorrectionLevel: "H",
+      },
+      (err, url) => {
+        if (err) return console.error(err);
+        console.log(url);
+        setQrCode(url);
+      }
+    );
 
     setUrl("");
   };
@@ -34,11 +37,11 @@ function QrCode() {
       <p>Create QR Code</p>
 
       <input
-            type="text"
-            value={nameInput}
-            onChange={(e) => setNameInput(e.target.value)}
-            placeholder="Give your QR Code a name"
-            />
+        type="text"
+        value={nameInput}
+        onChange={(e) => setNameInput(e.target.value)}
+        placeholder="Give your QR Code a name"
+      />
 
       <input
         type="text"
@@ -53,7 +56,9 @@ function QrCode() {
         {qrCode && (
           <>
             <img id="qr-image" src={qrCode} />
-            <a href={qrCode} download={`${qrName}-qrCode.png`}>Download QR Code</a>
+            <a href={qrCode} download={`${qrName}-qrCode.png`}>
+              Download QR Code
+            </a>
           </>
         )}
       </div>

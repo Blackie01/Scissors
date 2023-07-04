@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
 
-
 const InputShortener = ({ setInputValue }) => {
   const [value, setValue] = useState("");
 
@@ -13,13 +12,13 @@ const InputShortener = ({ setInputValue }) => {
   return (
     <div className="inputContainer">
       <div
-      className="type-link-section"
+        className="type-link-section"
         style={{
           justifyContent: "center",
         }}
       >
         <input
-        className="type-link-input"
+          className="type-link-input"
           style={{
             height: "3rem",
             borderRadius: "25px",
@@ -31,7 +30,7 @@ const InputShortener = ({ setInputValue }) => {
           onChange={(e) => setValue(e.target.value)}
         />
         <button
-        className="type-link-button"
+          className="type-link-button"
           style={{
             padding: "0 2rem",
             borderRadius: "25px",
@@ -39,7 +38,7 @@ const InputShortener = ({ setInputValue }) => {
             backgroundColor: "#0065fe",
             color: "#fff",
             cursor: "pointer",
-            height: '3rem',
+            height: "3rem",
             hover: { scale: "1.2" },
           }}
           type="button"

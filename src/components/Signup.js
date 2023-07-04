@@ -1,22 +1,21 @@
-import { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 import { useNavigate, Link } from "react-router-dom";
-import './Signup.css'
-import Loader from '../assets/loader.gif'
+import "./Signup.css";
+import Loader from "../assets/loader.gif";
 
-
-const supabaseUrl = 'https://ombrrbjpqdrongsmxfvs.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tYnJyYmpwcWRyb25nc214ZnZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODgxNzk1ODcsImV4cCI6MjAwMzc1NTU4N30.K5eRqZCR4FKMZ4GTYLsgA8CwPXKZgLZJTVCxSe0d4eg';
+const supabaseUrl = "https://ombrrbjpqdrongsmxfvs.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tYnJyYmpwcWRyb25nc214ZnZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODgxNzk1ODcsImV4cCI6MjAwMzc1NTU4N30.K5eRqZCR4FKMZ4GTYLsgA8CwPXKZgLZJTVCxSe0d4eg";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-function Signup({setUsername}) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [getUsername, setGetUsername] = useState('')
+function Signup({ setUsername }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [getUsername, setGetUsername] = useState("");
 
-//   loading state
-const [loading, setLoading] = useState(false);
-
+  //   loading state
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -24,57 +23,39 @@ const [loading, setLoading] = useState(false);
     event.preventDefault();
 
     if (password.length < 6) {
-
-        document.getElementById('password-req-message').innerHTML = 'Password must be 6 characters or more'
-
+      document.getElementById("password-req-message").innerHTML =
+        "Password must be 6 characters or more";
     } else {
+      try {
+        setLoading(true);
 
-        try {
-      setLoading(true);
+        const { user, error } = await supabase.auth.signUp({ email, password });
 
-            const { user, error } = await supabase.auth.signUp({ email, password });
-      
-            if (error) {
-              console.error(error.message);
-            } else {
-              console.log(user);
-              // Redirect or show success message
-              navigate("/dashboard");
-          setUsername(getUsername)
-
-            }
-          } catch (error) {
-            console.error(error.message);
-          } finally {
-            setLoading(false);
-          }
-
-        };
-
-    }
-
-    function LoadingL () {
-        return   <p 
-        style={{
-            textAlign: 'center',
-            height: '50px',
-            scale: '0.1'
-          }}
-        className="noData"><img src={Loader}/></p>
-    }
-
-    if (loading) {
-        document.getElementById('sign-in-button').innerHTML = `${LoadingL}`
-      
+        if (error) {
+          console.error(error.message);
+        } else {
+          console.log(user);
+          // Redirect or show success message
+          navigate("/dashboard");
+          setUsername(getUsername);
+        }
+      } catch (error) {
+        console.error(error.message);
+      } finally {
+        setLoading(false);
       }
-     
-  
+    }
+  };
+
+  if (loading) {
+    document.getElementById("signup-loader").style.display = "block";
+    document.getElementById("signup-span").style.display = "none";
+  }
 
   return (
-    
-    <div id='signup-page'>
-<div
-      className="overlays"
+    <div id="signup-page">
+      <div
+        className="overlays"
         style={{
           width: 1058,
           height: 404.9,
@@ -84,7 +65,7 @@ const [loading, setLoading] = useState(false);
         }}
       >
         <div
-      className="overlays"
+          className="overlays"
           style={{
             width: 199.1,
             height: 215.08,
@@ -98,7 +79,7 @@ const [loading, setLoading] = useState(false);
           }}
         />
         <div
-      className="overlays"
+          className="overlays"
           style={{
             width: 199.1,
             height: 215.08,
@@ -112,7 +93,7 @@ const [loading, setLoading] = useState(false);
           }}
         />
         <div
-      className="overlays"
+          className="overlays"
           style={{
             width: 271,
             height: 293,
@@ -127,87 +108,108 @@ const [loading, setLoading] = useState(false);
         />
       </div>
 
-        <section className='signup-container'>
-        <h4>Create Your <span><Link style={{textDecoration: 'none', color: '#0065fe'}} to="/">Scissors</Link></span> Account</h4>
-      <form onSubmit={handleSignUp}>
+      <section className="signup-container">
+        <h4>
+          Create Your{" "}
+          <span>
+            <Link style={{ textDecoration: "none", color: "#0065fe" }} to="/">
+              Scissors
+            </Link>
+          </span>{" "}
+          Account
+        </h4>
+        <form onSubmit={handleSignUp}>
+          <input
+            className="signup-input"
+            placeholder="enter username"
+            type="text"
+            id="username"
+            name="username"
+            required
+            value={getUsername}
+            style={{
+              height: "2.5rem",
+              borderRadius: "10px",
+              border: "1px solid #0065fe",
+              paddingLeft: "2rem",
+            }}
+            onChange={(event) => setGetUsername(event.target.value)}
+          />
 
-      <input
-        className='signup-input'
-        placeholder='enter username'
-          type="text"
-          id="username"
-          name="username"
-          required
-          value={getUsername}
-          style={{
-            height: '2.5rem',
-            borderRadius: '10px',
-            border: "1px solid #0065fe",
-            paddingLeft: '2rem',
-          }}
-          onChange={(event) => setGetUsername(event.target.value)}
-        />
+          <input
+            className="signup-input"
+            placeholder="enter email"
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={email}
+            style={{
+              height: "2.5rem",
+              borderRadius: "10px",
+              border: "1px solid #0065fe",
+              paddingLeft: "2rem",
+            }}
+            onChange={(event) => setEmail(event.target.value)}
+          />
 
-        <input
-        className='signup-input'
-        placeholder='enter email'
-          type="email"
-          id="email"
-          name="email"
-          required
-          value={email}
-          style={{
-            height: '2.5rem',
-            borderRadius: '10px',
-            border: "1px solid #0065fe",
-            paddingLeft: '2rem',
-          }}
-          onChange={(event) => setEmail(event.target.value)}
-        />
+          <input
+            className="signup-input"
+            placeholder="enter password"
+            type="password"
+            id="password"
+            name="password"
+            required
+            value={password}
+            style={{
+              height: "2.5rem",
+              borderRadius: "10px",
+              border: "1px solid #0065fe",
+              paddingLeft: "2rem",
+            }}
+            onChange={(event) => setPassword(event.target.value)}
+          />
 
-        <input
-        
-        className='signup-input'
-        placeholder='enter password'
-          type="password"
-          id="password"
-          name="password"
-          required
-          value={password}
-          style={{
-            height: '2.5rem',
-            borderRadius: '10px',
-            border: "1px solid #0065fe",
-            paddingLeft: '2rem',
-          }}
-          onChange={(event) => setPassword(event.target.value)}
-        />
+          <p
+            style={{ height: "2.5rem", fontSize: "smaller" }}
+            id="password-req-message"
+          ></p>
 
-        <p
-        style={{height: '2.5rem', fontSize: 'smaller'}}
-        id='password-req-message'></p>
+          <button
+            style={{
+              height: "2.5rem",
+              borderRadius: "10px",
+              border: "1px solid #0065fe",
+              paddingLeft: "2rem",
+              backgroundColor: "#0065fe",
+              color: "white",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            id="sign-in-button"
+            type="submit"
+          >
+            <span id="signup-span">Sign Up</span>
 
-        <button 
-         style={{
-            height: '2.5rem',
-            borderRadius: '10px',
-            border: "1px solid #0065fe",
-            paddingLeft: '2rem', 
-            backgroundColor: "#0065fe",
-            color:'white'
-            
-          }}
-          id='sign-in-button'
-        type="submit">
-            Sign Up
-            </button>
-      </form>
+            <img
+              id="signup-loader"
+              style={{ height: "2.5rem", scale: "2", display: "none" }}
+              src={Loader}
+            />
+          </button>
+        </form>
 
-      <p style={{height: '2.5rem', fontSize: 'smaller'}}>
-        Already have an account? <Link style={{textDecoration: 'none', color: '#0065fe'}} to='/login'>Login</Link>
-      </p>
-
-        </section>
+        <p style={{ height: "2.5rem", fontSize: "smaller" }}>
+          Already have an account?{" "}
+          <Link
+            style={{ textDecoration: "none", color: "#0065fe" }}
+            to="/login"
+          >
+            Login
+          </Link>
+        </p>
+      </section>
     </div>
   );
 }
