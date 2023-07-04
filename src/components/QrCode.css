@@ -9,5 +9,8 @@
 
 .qr-right-div {
     width: 60%;
-    padding: 1rem;
+}
+
+.download-qr {
+    text-decoration: none;
 }

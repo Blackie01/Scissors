@@ -12,7 +12,9 @@ function QrCode() {
   const [qrCode, setQrCode] = useState("");
 
   //onClick function for the button
-  const GenerateQR = () => {
+  const GenerateQR = (event) => {
+    event.preventDefault();
+    
     // to set the name for the qr code to be used in the download name
     setQrName(nameInput);
 
@@ -87,9 +89,9 @@ function QrCode() {
 
       <div className="qr-right-div">
         {qrCode && (
-          <div style={{border: '2px solid #0065fe', width: 'max-content'}}>
+          <div style={{border: '2px solid #0065fe', width: 'max-content', padding: '1rem', borderRadius: '10px'}}>
             <img id="qr-image" src={qrCode} />
-            <a href={qrCode} download={`${qrName}-qrCode.png`}>
+            <a className="download-qr" href={qrCode} download={`${qrName}-qrCode.png`}>
               <p>Download QR Code</p>
             </a>
           </div>
