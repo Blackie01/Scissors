@@ -48,7 +48,6 @@ function QrCode() {
           onChange={(e) => setNameInput(e.target.value)}
           placeholder="Give your QR Code a name"
           style={{
-            // width: '100%',
             height: "2.5rem",
             borderRadius: "10px",
             border: "1px solid #0065fe",
@@ -62,7 +61,6 @@ function QrCode() {
           onChange={(e) => setUrl(e.target.value)}
           placeholder="Paste your link here"
           style={{
-            // width: '100%',
             height: "2.5rem",
             borderRadius: "10px",
             border: "1px solid #0065fe",

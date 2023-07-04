@@ -6,7 +6,7 @@ function LinkShortener() {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <section>
+    <section style={{height: '8.6rem', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       {/* Styles for these are in Home.css */}
       <InputShortener setInputValue={setInputValue} inputValue={inputValue} />
       <Results inputValue={inputValue} />

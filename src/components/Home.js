@@ -83,6 +83,13 @@ function Home() {
           enhance user engagement.
         </p>
       </section>
+
+      <div className="homepage-feature-selector">
+        <p>Link shortener</p>
+        <p>Custom Link</p>
+        <p>QR Code</p>
+      </div>
+      
       <section className="home-shortener-function">
         <LinkShortener />
       </section>

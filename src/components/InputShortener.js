@@ -15,6 +15,8 @@ const InputShortener = ({ setInputValue }) => {
         className="type-link-section"
         style={{
           justifyContent: "center",
+          borderRadius: "25px",
+          border: "1px solid #0065fe",
         }}
       >
         <input
@@ -22,7 +24,7 @@ const InputShortener = ({ setInputValue }) => {
           style={{
             height: "3rem",
             borderRadius: "25px",
-            border: "1px solid #0065fe",
+            border: "none",
           }}
           type="text"
           placeholder="Paste a link to shorten it"

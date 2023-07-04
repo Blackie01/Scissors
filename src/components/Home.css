@@ -29,13 +29,21 @@ scale: 0.5;
 margin-top: -1.5rem;
 }
 
+.homepage-feature-selector {
+  display: flex;
+  height: max-content;
+  justify-content: center;
+  gap: 7rem;
+  font-size: small;
+}
+
 .home-shortener-function {
-  height: 3rem;
+  height: max-content;
 }
 
 .vector-image-section {
   display: flex;
-  margin: 5rem auto 0 -12rem;
+  margin: 0 auto 0 -12rem;
   justify-content: center;
   align-items: center;
 }
@@ -76,16 +84,25 @@ backdrop-filter: blur(106px);
 
 .type-link-section {
   display: flex;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
+  width: 40%;
+  margin: auto;
+  background-color: #fff;
 }
 
 .type-link-input {
-  width: 30%;
+  width: 75%;
   padding: 0 2rem;
+}
+
+.type-link-input:focus {
+  border: none;
+  outline: none;
 }
 
 .type-link-button {
   margin-left: 1.5rem;
+  width: 25%;
 }
 
 .overlays {

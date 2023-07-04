@@ -42,7 +42,7 @@ const Results = ({ inputValue }) => {
       <p
         style={{
           textAlign: "center",
-          height: "50px",
+          height: "55px",
           scale: "0.1",
         }}
         className="noData"
@@ -52,7 +52,7 @@ const Results = ({ inputValue }) => {
     );
   }
   if (error) {
-    return <p className="noData">Something went wrong :(</p>;
+    return <p style={{textAlign: 'center', color: 'red'}} className="noData">Something went wrong :(</p>;
   }
 
   function copyText() {
@@ -60,7 +60,7 @@ const Results = ({ inputValue }) => {
   }
 
   return (
-    <>
+    <div style={{height: '5.6rem'}}>
       {shortenLink && (
         <div className="result">
           <p
@@ -93,7 +93,7 @@ const Results = ({ inputValue }) => {
           </CopyToClipboard>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
