@@ -1,0 +1,13 @@
+.qr-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.qr-left-div {
+    width: 25%;
+}
+
+.qr-right-div {
+    width: 60%;
+    padding: 1rem;
+}

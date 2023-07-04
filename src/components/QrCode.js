@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import QRCode from "qrcode";
+import './QrCode.css'
 
 function QrCode() {
   //state to handle QR name
@@ -33,33 +34,65 @@ function QrCode() {
   };
 
   return (
-    <section>
-      <p>Create QR Code</p>
+    <section className="qr-container">
+      <div className="qr-left-div">
+        <p>Create QR Code</p>
 
-      <input
-        type="text"
-        value={nameInput}
-        onChange={(e) => setNameInput(e.target.value)}
-        placeholder="Give your QR Code a name"
-      />
+<form>
 
-      <input
-        type="text"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        placeholder="Paste your link here"
-      />
+        <input
+          type="text"
+          value={nameInput}
+          onChange={(e) => setNameInput(e.target.value)}
+          placeholder="Give your QR Code a name"
+          style={{
+            // width: '100%',
+            height: "2.5rem",
+            borderRadius: "10px",
+            border: "1px solid #0065fe",
+            paddingLeft: "1rem",
+          }}
+        />
 
-      <button onClick={GenerateQR}>Get QR</button>
+        <input
+          type="text"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          placeholder="Paste your link here"
+          style={{
+            // width: '100%',
+            height: "2.5rem",
+            borderRadius: "10px",
+            border: "1px solid #0065fe",
+            paddingLeft: "1rem",
+          }}
+        />
 
-      <div>
+        <button
+        style={{
+          height: "2.5rem",
+          borderRadius: "10px",
+          border: "1px solid #0065fe",
+          backgroundColor: "#0065fe",
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: '1.5rem'
+        }}
+        onClick={GenerateQR}>Get QR</button>
+</form>
+
+      </div>
+
+      <div className="qr-right-div">
         {qrCode && (
-          <>
+          <div style={{border: '2px solid #0065fe', width: 'max-content'}}>
             <img id="qr-image" src={qrCode} />
             <a href={qrCode} download={`${qrName}-qrCode.png`}>
-              Download QR Code
+              <p>Download QR Code</p>
             </a>
-          </>
+          </div>
         )}
       </div>
     </section>
