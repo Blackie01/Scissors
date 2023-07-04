@@ -37,8 +37,40 @@ margin-top: -1.5rem;
   font-size: small;
 }
 
+.homepage-feature-selector p {
+  cursor: pointer;
+  transition: font-weight 0.1s ease;
+}
+
+.homepage-feature-selector p:hover {
+  color: #005AE2;
+}
+
+.homepage-feature-selector p.active {
+  color: #0065fe;
+  font-weight: bold;
+}
+
 .home-shortener-function {
   height: max-content;
+}
+
+.unavailable-button {
+  width: 40%;
+  height: 3rem;
+  background-color: #5898fa;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease;
+}
+
+.unavailable-button:hover{
+  background-color: #0065fe;
 }
 
 .vector-image-section {
