@@ -8,7 +8,7 @@ import QrCode from "./QrCode";
 
 function Dashboard({ username }) {
 
-    const [dashcontent, setDashcontent] = useState('')
+    const [dashcontent, setDashcontent] = useState('option1')
 
    const dashDisplay = (option) => {
     setDashcontent(option)

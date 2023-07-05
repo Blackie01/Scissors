@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Navbar from "./Nav";
 import "./Home.css";
 import Vector2 from "../assets/Vector 2.png";
@@ -9,27 +9,26 @@ import LinkShortener from "./LinkShortener";
 import { Link } from "react-router-dom";
 
 function Home() {
-
   // unavailable snippet to unregistered users.
-  function RegisterToStart () {
+  function RegisterToStart() {
     return (
-      <section style={{height: '8.6rem'}}>
-        <Link style={{textDecoration: 'none'}} to='/signup'>
-        <div className="unavailable-button">Register to access this feature.</div>
+      <section style={{ height: "8.6rem" }}>
+        <Link style={{ textDecoration: "none" }} to="/signup">
+          <div className="unavailable-button">
+            Register to access this feature.
+          </div>
         </Link>
       </section>
-    )
-
+    );
   }
 
   // Manage state for the snippet of features of the app
-  const [snippet, setSnippet] = useState('select1')
+  const [snippet, setSnippet] = useState("select1");
 
   // toggle function for the snippet showcase
   const showSnippet = (select) => {
-    setSnippet(select)
-  }
-
+    setSnippet(select);
+  };
 
   return (
     <section className="overhome-home">
@@ -108,21 +107,33 @@ function Home() {
       </section>
 
       <div className="homepage-feature-selector">
-        <p className={snippet === 'select1' ? 'active' : ''} onClick={()=> showSnippet('select1')}>Link Shortener</p>
-        <p className={snippet === 'select2' ? 'active' : ''} onClick={()=> showSnippet('select2')}>Custom Link</p>
-        <p className={snippet === 'select3' ? 'active' : ''} onClick={()=> showSnippet('select3')}>QR Code</p>
+        <p
+          className={snippet === "select1" ? "active" : ""}
+          onClick={() => showSnippet("select1")}
+        >
+          Link Shortener
+        </p>
+        <p
+          className={snippet === "select2" ? "active" : ""}
+          onClick={() => showSnippet("select2")}
+        >
+          Custom Link
+        </p>
+        <p
+          className={snippet === "select3" ? "active" : ""}
+          onClick={() => showSnippet("select3")}
+        >
+          QR Code
+        </p>
       </div>
 
-          {snippet && (
- <section className="home-shortener-function">
-  {snippet === 'select1' && <LinkShortener/>}
-  {snippet === 'select2' && <RegisterToStart/>}
-  {snippet === 'select3' && <RegisterToStart/>}
-
- {/* <LinkShortener /> */}
-</section>
-          )}
-     
+      {snippet && (
+        <section className="home-shortener-function">
+          {snippet === "select1" && <LinkShortener />}
+          {snippet === "select2" && <RegisterToStart />}
+          {snippet === "select3" && <RegisterToStart />}
+        </section>
+      )}
 
       <section className="vector-image-section">
         <span>
