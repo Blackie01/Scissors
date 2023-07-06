@@ -9,9 +9,6 @@ function Navbar() {
       <img src={Logo} />
 
       <section className="mid-nav-section">
-        <Link to='/qr'>
-        <p id="url-text-for-nav">QR Code</p>
-        </Link>
         <p>
           <select name="features" id="features">
             <option>Features</option>
