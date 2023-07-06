@@ -1,19 +1,28 @@
-// import { useNavigate } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
-// import Dashboard from "./dashboard";
+import React from 'react';
+import { Route, Switch, useNavigate } from 'react-router-dom';
+import Dashboard from './dashboard';
 
 
-// const AuthCheck = (Dashboard) => {
-//     return (props) => {
-//         const navigate = useNavigate()
-//         const accessToken = localStorage.getItem('access_token')
+// This piece of code isn't used yet.
 
-//         if (!accessToken) {
-//             navigate('/login')
-//         }
+function PrivateRoute({ element: Dashboard, ...rest }) {
 
-//         return <Dashboard {...props}/>
-//     }
-// }
+  const userToken = localStorage.getItem('access_token');
+  const navigate = useNavigate();
 
-// export default AuthCheck;
+  React.useEffect(() => {
+    if (!userToken) {
+      navigate('/login');
+    } 
+return <Dashboard />;
+
+  }, []);
+
+//   if (userToken) {
+//   }
+  
+//   <Dashboard />;
+  
+}
+
+export default PrivateRoute;

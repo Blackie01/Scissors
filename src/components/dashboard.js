@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import LinkShortener from "./LinkShortener";
 import QrCode from "./QrCode";
 import { createClient } from "@supabase/supabase-js";
-// import AuthCheck from "./AuthCheck";
 
 
 // my Supabase client
@@ -16,15 +15,17 @@ const supabaseKey =
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 
-function Dashboard({ username }) {
+function Dashboard() {
 
   // state for the content that will show up in the dashboard
   const [dashcontent, setDashcontent] = useState('option1')
 
   // onClick function for content to be displayed on dashboard
-   const dashDisplay = (option) => {
-    setDashcontent(option)
+ 
+  const dashDisplay = (option) => {
+      setDashcontent(option)
    }
+   
 
   //  navigation 
    const navigate = useNavigate()
