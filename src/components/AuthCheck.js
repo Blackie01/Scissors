@@ -1,28 +1,20 @@
-import React from 'react';
-import { Route, Switch, useNavigate } from 'react-router-dom';
-import Dashboard from './dashboard';
+import { useNavigate } from "react-router";
+import React from "react";
 
-
-// This piece of code isn't used yet.
-
-function PrivateRoute({ element: Dashboard, ...rest }) {
-
-  const userToken = localStorage.getItem('access_token');
+const AuthCheck = (Dashboard) => {
   const navigate = useNavigate();
 
-  React.useEffect(() => {
-    if (!userToken) {
+  return (props) => {
+    const accessToken = localStorage.getItem('access_token');
+    const isAuthenticated = !!accessToken;
+
+    if (!isAuthenticated) {
       navigate('/login');
-    } 
-return <Dashboard />;
+      return null;
+    }
 
-  }, []);
+    return <Dashboard isAuthenticated={isAuthenticated} {...props} />;
+  };
+};
 
-//   if (userToken) {
-//   }
-  
-//   <Dashboard />;
-  
-}
-
-export default PrivateRoute;
+export default AuthCheck;

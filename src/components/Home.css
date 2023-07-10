@@ -120,11 +120,14 @@ backdrop-filter: blur(106px);
   width: 40%;
   margin: auto;
   background-color: #fff;
+  border: 1px solid #0065fe;
 }
 
 .type-link-input {
   width: 75%;
   padding: 0 2rem;
+  border: none;
+
 }
 
 .type-link-input:focus {
@@ -177,15 +180,19 @@ backdrop-filter: blur(106px);
   }
 
   .type-link-section {
+    /* display: none; */
     flex-direction: column;
     gap: 0.5rem;
     width: max-content;
     margin: 2rem auto;
+    border: none;
   }
 
   .type-link-input {
     width: 15rem;
     text-align: center;
+  border: 1px solid #0065fe;
+
   }
 
   .type-link-button {

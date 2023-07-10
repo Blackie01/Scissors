@@ -5,6 +5,7 @@ import QrCode from "./components/QrCode";
 import Signup from "./components/Signup";
 import Dashboard from "./components/dashboard";
 import Login from "./components/Login";
+import CustomLinkGenerator from "./components/CustomLinkShortener";
 // import PrivateRoute from "./components/AuthCheck";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
 
         <Route username={username} path="/dashboard" element={<Dashboard/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/custom' element={<CustomLinkGenerator/>}/>
       </Routes>
     </div>
   );

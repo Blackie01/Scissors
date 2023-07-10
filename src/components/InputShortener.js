@@ -16,15 +16,14 @@ const InputShortener = ({ setInputValue }) => {
         style={{
           justifyContent: "center",
           borderRadius: "25px",
-          border: "1px solid #0065fe",
+          
         }}
-      >
+       >
         <input
           className="type-link-input"
           style={{
             height: "3rem",
             borderRadius: "25px",
-            border: "none",
           }}
           type="text"
           placeholder="Paste a link to shorten it"
